@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jobapplication.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <a href="sign-in.html">Sign In</a>
+        <a href="sign-up.html">Sign Up</a>
+        <a href="jobapplication.html">Job Application</a>
+    </nav>
+    
+    <section>
+        <div class="container">
+            <div class="apply-box">
+                <h1>Job Application</h1>
+                <form action="#" class="form1">
+                    <div class="form_container">
+                        <div class="form_control">
+                            <label for="first">First Name</label>
+                            <input type="text" name="first" id="first" placeholder="Enter first name" required>
+                        </div>
+                        <div class="form_control">
+                            <label for="last">Last Name</label>
+                            <input type="text" name="last" id="last" placeholder="Enter last name" required>
+                        </div>
+                        <div class="form_control">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Enter email id" required>
+                        </div>
+                        <div class="form_control">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="textarea_control">
+                            <label for="address">Address</label>
+                            <textarea name="address" id="address" cols="50" rows="4" required></textarea>
+                        </div>
+                        <div class="form_control">
+                            <label for="job_role">Choose Job Role</label>
+                            <select name="job_role" id="job_role" required>
+                                <option value="">Choose Job Role</option>
+                                <option value="frontend">FrontEnd</option>
+                                <option value="backend">BackEnd</option>
+                                <option value="ui">UI-Development</option>
+                                <option value="mobile">Mobile App Development</option>
+                            </select>
+                        </div>
+                        <div class="form_control">
+                            <label for="date">Date</label>
+                            <input type="date" name="date" id="date" value="2023-07-21" required>
+                        </div>
+                        <div class="form_control">
+                            <label for="cv">Upload CV</label>
+                            <input type="file" name="cv" id="cv" required>
+                        </div>
+                        <div class="container1">
+                            <input type="radio" id="male" checked="checked" name="gender">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender">
+                            <label for="female">Female</label>
+                        </div>
+                        <div class="button_container">
+                            <button type="submit">Apply Now</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+    <script src="https://smtpjs.com/v3/smtp.js">
+        const first =document.getElementById('first');
+        const last =document.getElementById('last');
+        const email =document.getElementById('email');
+        const phone =document.getElementById('phone');
+        const address =document.getElementById('address');
+
+        sumbit.addEventListener('sumbit',(e)=> {
+            e.preventDefault();
+            console.log('clicked');
+
+            //email code here....
+
+            Email.send({
+            SecureToken : "5F9225A9D232A75D8B3BBD16691CE57DFF28",
+            To : 'them@website.com',
+            From : "you@isp.com",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+        message => alert(message)
+        );  
+    });
+    </script>
+    
+</body>
+</html>
